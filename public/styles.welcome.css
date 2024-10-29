@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  display: flex; /* Usar flexbox para centrar */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  background-color: #f0f0f0; /* Color de fondo opcional */
+}
+
+.welcome-container {
+  text-align: center; /* Centra el texto en el contenedor */
+}
+
+h1 {
+  font-size: 4rem; /* Tamaño grande para el texto */
+  color: #c60707; /* Color del texto */
+  margin: 0; /* Elimina el margen */
+}
