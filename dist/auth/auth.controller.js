@@ -29,6 +29,7 @@ let AuthController = class AuthController {
         if (!isValid) {
             throw new common_2.UnauthorizedException('Acceso denegado');
         }
+        res.setHeader('Content-Type', 'text/html');
         return res.sendFile((0, path_1.join)(__dirname, '..', '..', 'public', 'welcome.html'));
     }
 };

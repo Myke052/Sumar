@@ -1,4 +1,11 @@
-import { Controller, Post, Body, HttpCode, HttpStatus, Res } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  HttpCode,
+  HttpStatus,
+  Res,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { UnauthorizedException } from '@nestjs/common';
@@ -11,16 +18,18 @@ export class AuthController {
 
   @Post('login')
   @HttpCode(HttpStatus.OK) // Devuelve 200 en caso de éxito
-  login(@Body() loginDto: LoginDto, @Res() res: Response) { // Asegúrate de incluir @Res() aquí
+  login(@Body() loginDto: LoginDto, @Res() res: Response) {
+    // Asegúrate de incluir @Res() aquí
     console.log('Datos recibidos:', loginDto);
     const isValid = this.authService.validateUser(loginDto);
     console.log('Validación:', isValid); // Log para verificar si es válido
 
-    if(!isValid) {
+    if (!isValid) {
       throw new UnauthorizedException('Acceso denegado');
     }
 
     // Si la validación es exitosa, devuelve welcome.html
-    return res.sendFile(join(__dirname, '..', '..', 'public', 'welcome.html')); 
+    res.setHeader('Content-Type', 'text/html');
+    return res.sendFile(join(__dirname, '..', '..', 'public', 'welcome.html'));
   }
 }
