@@ -9,9 +9,9 @@ async function bootstrap() {
 
   // Configura CORS para permitir acceso público
   app.enableCors({
-    origin: '*', // Permite todas las solicitudes desde cualquier origen
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Métodos HTTP permitidos
-    credentials: false, // No permite el uso de cookies
+    origin: 'https://sumar.vercel.app/', // Especifica un origen seguro
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
   });
 
   // Configuración de archivos estáticos y tuberías de validación
