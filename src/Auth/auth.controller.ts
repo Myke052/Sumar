@@ -29,7 +29,9 @@ export class AuthController {
     }
 
     // Si la validación es exitosa, devuelve welcome.html
+    //res.setHeader('Content-Type', 'text/html');
+    //return <h1>hello word<h1>res.sendFile(join(__dirname, '..', '..', 'public', 'welcome.html'));
     res.setHeader('Content-Type', 'text/html');
-    return res.sendFile(join(__dirname, '..', '..', 'public', 'welcome.html'));
+    return res.send('<h1>Hello World</h1>');
   }
 }

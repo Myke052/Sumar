@@ -17,7 +17,6 @@ const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const login_dto_1 = require("./dto/login.dto");
 const common_2 = require("@nestjs/common");
-const path_1 = require("path");
 let AuthController = class AuthController {
     constructor(authService) {
         this.authService = authService;
@@ -30,7 +29,7 @@ let AuthController = class AuthController {
             throw new common_2.UnauthorizedException('Acceso denegado');
         }
         res.setHeader('Content-Type', 'text/html');
-        return res.sendFile((0, path_1.join)(__dirname, '..', '..', 'public', 'welcome.html'));
+        return res.send('<h1>Hello World</h1>');
     }
 };
 exports.AuthController = AuthController;

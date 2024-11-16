@@ -4,5 +4,5 @@ import { Response } from 'express';
 export declare class AuthController {
     private readonly authService;
     constructor(authService: AuthService);
-    login(loginDto: LoginDto, res: Response): void;
+    login(loginDto: LoginDto, res: Response): Response<any, Record<string, any>>;
 }
